@@ -91,9 +91,11 @@ echo 'PLANET_API_KEY = "YOUR_ACTUAL_API_KEY_HERE"' > .streamlit/secrets.toml
 python train_recommender.py
 
 # Run the app
+```bash
 streamlit run app.py
 
-### 🗺️ How to Use
+
+## 🗺️ How to Use
 
 1. **Select Your Area:** Draw your region of interest on the map.  
 2. **Set Sensitivity:** Adjust the slider to define NDVI sensitivity.  
@@ -111,3 +113,4 @@ streamlit run app.py
 - App framework by **Streamlit**  
 
 © 2025 TerraScan by Gideon Thuku
+
