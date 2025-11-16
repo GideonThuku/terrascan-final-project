@@ -93,7 +93,7 @@ python train_recommender.py
 # Run the app
 ```bash
 streamlit run app.py
-
+```
 ---
 
 ## 🗺️ How to Use
