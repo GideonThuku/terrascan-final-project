@@ -92,3 +92,23 @@ python train_recommender.py
 
 # Run the app
 streamlit run app.py
+
+## 🗺️ How to Use
+
+1. **Select Your Area:** Draw your region of interest on the map.  
+2. **Set Sensitivity:** Adjust the slider to define NDVI sensitivity.  
+3. **Start Analysis:** Click "Start AI Analysis."  
+4. **Review Results:** View your health score, AI land classification, and AI-driven recommendation.  
+5. **Download Report:** Export your full CSV report, which includes all AI analysis.  
+
+---
+
+## 🙏 Acknowledgements
+
+- Developed by **Gideon Thuku**  
+- Satellite data powered by **Planet.com**  
+- AI models built with **TensorFlow** and **Scikit-learn**  
+- App framework by **Streamlit**  
+
+© 2025 TerraScan by Gideon Thuku
+
