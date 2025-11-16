@@ -232,7 +232,7 @@ def classify_land_use(image_data):
     RELEVANT_LABELS = [
         'valley', 'lakeside', 'seashore', 'alp', 'meadow', 'field',
         'forest', 'mountain_range', 'river', 'geyser', 'volcano', 
-        'promontory', 'sandbar', 'coast', 'isthmus'
+        'promontory', 'sandbar', 'coast', 'isthmus', 'farmland', 'grassland'
     ]
 
     # Find the *first* relevant prediction in the top 5
@@ -259,7 +259,7 @@ def get_smart_recommendation(degradation_percent, land_use_type):
     land_use_mapping = {'Agricultural': 0, 'Forest': 1, 'Other': 2}
     
     # Simplify the MobileNetV2 output for our ML model
-    if 'valley' in land_use_type.lower() or 'meadow' in land_use_type.lower() or 'field' in land_use_type.lower():
+    if 'valley' in land_use_type.lower() or 'meadow' in land_use_type.lower() or 'field' in land_use_type.lower() or 'farmland' in land_use_type.lower():
         land_use_numeric = 0 # Agricultural
     elif 'alp' in land_use_type.lower() or 'forest' in land_use_type.lower():
         land_use_numeric = 1 # Forest
@@ -318,16 +318,16 @@ with st.expander("📚 Complete User Guide - Learn How to Use TerraScan", expand
     <div class="step-container">
         <div class="step-title"><span class="step-number">1</span> Understanding TerraScan</div>
         <div class="step-description">
-        TerraScan uses advanced satellite technology and two AI models to analyze vegetation health. 
-        It calculates NDVI (vegetation index), uses Computer Vision (CV) to identify land type,
-        and uses a Machine Learning (ML) model to give you a smart recommendation.
+        TerraScan uses advanced satellite technology and *two AI models* to analyze vegetation health. 
+        It calculates NDVI (vegetation index), uses *Computer Vision (CV)* to identify land type,
+        and uses a *Machine Learning (ML)* model to give you a smart recommendation.
         </div>
     </div>
     
     <div class="step-container">
         <div class="step-title"><span class="step-number">2</span> Step 1: Select Your Area</div>
         <div class="step-description">
-        How to draw on the map:
+        *How to draw on the map:*
         - Click the <span style="color: #4CAF50;">■ polygon tool</span> or <span style="color: #4CAF50;">□ rectangle tool</span> in the map toolbar
         - Draw a shape around the area you want to analyze
         </div>
@@ -336,10 +336,10 @@ with st.expander("📚 Complete User Guide - Learn How to Use TerraScan", expand
     <div class="step-container">
         <div class="step-title"><span class="step-number">3</span> Step 2: Set Analysis Sensitivity</div>
         <div class="step-description">
-        Understanding NDVI Threshold:
-        - Low values (0.0-0.1): Very sensitive - detects even slight vegetation stress
-        - Medium values (0.1-0.2): Balanced detection - good for general monitoring
-        - High values (0.2+): Strict - only detects significant degradation
+        *Understanding NDVI Threshold:*
+        - *Low values (0.0-0.1):* Very sensitive - detects even slight vegetation stress
+        - *Medium values (0.1-0.2):* Balanced detection - good for general monitoring
+        - *High values (0.2+):* Strict - only detects significant degradation
         </div>
     </div>
     
@@ -349,20 +349,20 @@ with st.expander("📚 Complete User Guide - Learn How to Use TerraScan", expand
         Click the "Start Analysis" button to begin processing. Our system will:
         - Connect to Planet's satellite network
         - Download the latest satellite imagery
-        - NEW: Run CV model to classify land type
+        - *NEW:* Run CV model to classify land type
         - Calculate vegetation health (NDVI)
-        - NEW: Run ML model to generate a smart recommendation
+        - *NEW:* Run ML model to generate a smart recommendation
         </div>
     </div>
     
     <div class="step-container">
         <div class="step-title"><span class="step-number">5</span> Step 4: Interpret Results</div>
         <div class="step-description">
-        Understanding your results:
-        - Land Health Score: Overall vegetation health percentage
-        - NEW AI Land Type: The land category identified by the CV model
-        - Vegetation Map: Visual representation of health patterns
-        - NEW AI Recommendation: A smart recommendation from the ML model
+        *Understanding your results:*
+        - *Land Health Score:* Overall vegetation health percentage
+        - *NEW AI Land Type:* The land category identified by the CV model
+        - *Vegetation Map:* Visual representation of health patterns
+        - *NEW AI Recommendation:* A smart recommendation from the ML model
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -671,7 +671,8 @@ if st.session_state.analysis_results:
     
     # The create_report_csv function returns the data directly.
     # We assign it to a variable and pass it straight to the download button.
-    csv_data = utils.create_report_csv(st.session_state.aoi, degradation, results['threshold'])
+    csv_data = utils..create_report_csv(st.session_state.aoi, degradation, results['threshold'], 
+                                   results['land_use_type'], results['smart_recommendation'])
 
     st.download_button(
        label="📥 Download Professional Report (CSV)",
@@ -709,7 +710,7 @@ st.markdown("""
         <p><strong>Advanced Land Health Monitoring Platform</strong></p>
         <p style='font-size: 0.9em; color: #CCCCCC;'>
             Powered by Planet Satellite Imagery 🌍 | AI by TensorFlow & Scikit-learn 🧠 | Built with Streamlit ⚡
-        </in>
+        </p>
     </div>
 </div>
 """, unsafe_allow_html=True)
