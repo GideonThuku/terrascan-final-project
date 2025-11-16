@@ -671,8 +671,16 @@ if st.session_state.analysis_results:
     
     # The create_report_csv function returns the data directly.
     # We assign it to a variable and pass it straight to the download button.
-    csv_data = utils..create_report_csv(st.session_state.aoi, degradation, results['threshold'], 
-                                   results['land_use_type'], results['smart_recommendation'])
+    
+    # --- THIS IS THE SYNTAX FIX ---
+    # It now has one dot, and it passes all the new AI results to the utils function.
+    csv_data = utils.create_report_csv(
+        st.session_state.aoi, 
+        degradation, 
+        results['threshold'], 
+        results['land_use_type'], 
+        results['smart_recommendation']
+    )
 
     st.download_button(
        label="📥 Download Professional Report (CSV)",
