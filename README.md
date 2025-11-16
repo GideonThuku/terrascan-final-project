@@ -94,6 +94,8 @@ python train_recommender.py
 ```bash
 streamlit run app.py
 
+---
+
 ## 🗺️ How to Use
 
 1. **Select Your Area:** Draw your region of interest on the map.  
