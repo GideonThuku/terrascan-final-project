@@ -94,7 +94,6 @@ python train_recommender.py
 ```bash
 streamlit run app.py
 
-
 ## 🗺️ How to Use
 
 1. **Select Your Area:** Draw your region of interest on the map.  
@@ -102,8 +101,6 @@ streamlit run app.py
 3. **Start Analysis:** Click "Start AI Analysis."  
 4. **Review Results:** View your health score, AI land classification, and AI-driven recommendation.  
 5. **Download Report:** Export your full CSV report, which includes all AI analysis.  
-
----
 
 ## 🙏 Acknowledgements
 
