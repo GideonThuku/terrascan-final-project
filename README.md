@@ -1,6 +1,6 @@
 # 🛰️ TerraScan AI: AI-Powered Land Health Analysis
 
-**LIVE DEMO:** [https://terrascanafritech.streamlit.app/](https://terrascan-final-project.streamlit.app/)  
+**LIVE DEMO:** [https://terrascan-final-project.streamlit.app/](https://terrascan-final-project.streamlit.app/)  
 
 A project by **Gideon Thuku**.
 
@@ -93,9 +93,7 @@ python train_recommender.py
 # Run the app
 streamlit run app.py
 
----
-
-## 🗺️ How to Use
+### 🗺️ How to Use
 
 1. **Select Your Area:** Draw your region of interest on the map.  
 2. **Set Sensitivity:** Adjust the slider to define NDVI sensitivity.  
@@ -113,4 +111,3 @@ streamlit run app.py
 - App framework by **Streamlit**  
 
 © 2025 TerraScan by Gideon Thuku
-
