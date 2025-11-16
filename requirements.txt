@@ -1,0 +1,10 @@
+streamlit>=1.28.0
+pandas
+numpy
+folium
+streamlit-folium
+requests
+Pillow
+matplotlib
+scikit-learn
+tensorflow
