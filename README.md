@@ -1,6 +1,6 @@
 # 🛰️ TerraScan AI: AI-Powered Land Health Analysis
 
-**LIVE DEMO:** [https://terrascanafritech.streamlit.app/](https://terrascanafritech.streamlit.app/)  
+**LIVE DEMO:** [https://terrascanafritech.streamlit.app/](https://terrascan-final-project.streamlit.app/)  
 
 A project by **Gideon Thuku**.
 
