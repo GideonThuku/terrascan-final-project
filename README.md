@@ -90,6 +90,8 @@ echo 'PLANET_API_KEY = "YOUR_ACTUAL_API_KEY_HERE"' > .streamlit/secrets.toml
 # You must train the ML model at least once to create the model file
 python train_recommender.py
 
+---
+
 # Run the app
 streamlit run app.py
 
